@@ -154,15 +154,23 @@ nav{
     top: 45%;
     left: 50%;
     /* The smooth continuous float effect */
-    animation: floatSlow 8s ease-in-out infinite;
+    animation: floatSlow 4s ease-in-out infinite;
 }
+
 
 .art-placeholder {
     width: 350px;
     height: 350px;
-    border-radius: 50%;
+    border-radius: 50%;background-image: 
+        linear-gradient(rgba(4, 11, 23, 0.5), rgba(4, 11, 23, 0.5)), 
+        url('profile-pic.jpeg');
+    
+    /* Ensures the image covers the whole circle nicely */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* A temporary gradient that mimics the colors in your reference image */
-    background: linear-gradient(135deg, #07162e, #ff3366, #ff9933);
+    /* background: linear-gradient(135deg, #07162e, #ff3366, #ff9933); */
     filter: grayscale(0%) contrast(140%) ;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
@@ -207,7 +215,9 @@ nav{
 
 /* 6. The Keyframes for the Floating Animation */
 @keyframes floatSlow {
-    0% { transform: translate(-50%, -50%); }
-    50% { transform: translate(-50%, -55%); } /* Drifts up slightly */
-    100% { transform: translate(-50%, -50%); } /* Returns to start */
+    0% { transform: translate(-50%, -50%) rotateZ(0deg); }
+    25% { transform: translate(-50%, -55%) rotateZ(4deg) rotateY(5deg); } /* Drifts up slightly */
+    50% { transform: translate(-50%, -50%) rotateZ(0deg); } /* Returns to start */
+    75% { transform: translate(-50%, -55%) rotateZ(-4deg) rotateY(-5deg); } /* Drifts up slightly */
+    100% { transform: translate(-50%, -50%) rotateZ(0deg); } /* Returns to start */
 }
