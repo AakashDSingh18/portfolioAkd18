@@ -81,7 +81,7 @@ nav{
     border-radius: 50%;
     background-image: 
         linear-gradient(rgba(4, 11, 23, 0.5), rgba(4, 11, 23, 0.5)), 
-        url('profile-pic.jpeg');
+        url('items/profile-pic.jpeg');
     
     /* Ensures the image covers the whole circle nicely */
     background-size: cover;
